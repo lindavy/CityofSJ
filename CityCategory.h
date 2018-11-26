@@ -7,40 +7,51 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Restaurants.h"
-// Categories: restaurants, public transit, attractions, schools, services
 
-typedef enum
-{
-    restaurants = 1,
-    transits = 2,
-    attractions = 3,
-    schools = 4,
-    services = 5
-} category_t;
+/*
+ * Categories:
+ * 1. Restaurant
+ * 2. Public Transits
+ * 3. Attractions
+ * 4. Schools
+ * 5. Services
+ *
+ * Information:
+ * Name of Place
+ * Description of Place
+ * User Marked as Favorite or Not
+ * Rating on Scale of 1-5 (5 - Great)
+ */
 
 class CityCategory {
 
-private:
-
+protected:
     std::string name;
     std::string description;
-    bool favorite = false; // User marked as favorite
-    int rating = 0;  // 5 - Great
+    bool favorite = false;
+    int rating = 0;
 
-    // Store list of categories
-    std::vector<CityCategory> CityCategories;
+    // Store list of categories (needs to be implemented)
+    std::vector<CityCategory *> CityCategories;
 
 public:
+    CityCategory();
+    virtual ~CityCategory();
 
-    void createPlace(int choice, std::string name, std::string description, bool favorite, int rating); // stores place info
-    void getListing(); // prints place's info
+    // Add New Place
+    virtual void createPlace(
+            std::string name, std::string description, bool favorite, int rating);
 
+    // Print Composites
+    virtual void getListing();
+
+    // Accessors
     std::string getName();
     std::string getDescription();
     bool getFavorite();
     int getRating();
 
+    // Mutators
     void setName(std::string name);
     void setDescription(std::string blurb);
     void setFavorite(bool fav);

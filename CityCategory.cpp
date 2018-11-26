@@ -1,52 +1,49 @@
-//
-// Created by Linda Nguyen on 11/16/18.
-//
+////
+//// Created by Linda Nguyen on 11/16/18.
+////
 #include "CityCategory.h"
 
-void CityCategory::createPlace(int choice, std::string name, std::string description, bool favorite, int rating)
+// Default
+CityCategory::CityCategory()
 {
-//    this->name = name;
-//    this->description = description;
-//    this->favorite = favorite;
-//    this->rating = rating;
-//    selectCategory(choice);
-
-    category_t category;
-    if(choice == 1)
-    {
-        category = restaurants;
-        Restaurant *place = new Restaurant();
-        //place->addPlace(name, description, favorite, rating);
-    }
-    else if (choice == 2)
-        category = transits;
-    else if (choice == 3)
-        category = attractions;
-    else if (choice == 4)
-        category = schools;
-    else
-        category = services;
+    this->name = "CmpE 135 Course\n";
+    this->description = "Object-Oriented Design\n";
+    this->favorite = true;
+    this->rating = 5;
 }
 
-// ***** PRINT FUNCTIONS *****
+// Destructor
+CityCategory::~CityCategory()
+{
+    std::cout << "Destructing a CityCategory...\n";
+};
+
+void CityCategory::createPlace(std::string name, std::string description, bool favorite, int rating)
+{
+    this->name = name;
+    this->description = description;
+    this->favorite = favorite;
+    this->rating = rating;
+}
+
+// Print Place Information
 void CityCategory::getListing()
 {
-    std::cout << "------- City Categories -------\n\n";
     if (favorite)
     {
         std::cout << "*    Name: " << getName() << std::endl;
         std::cout << "*    Description: " << getDescription() << std::endl;
-        std::cout << "*    Rating: " << getRating() << std::endl;
+        std::cout << "*    Rating: " << getRating() << "\n\n";
     }
     else
     {
         std::cout << "|    Name: " << getName() << std::endl;
         std::cout << "|    Description: " << getDescription() << std::endl;
-        std::cout << "|    Rating: " << getRating() << std::endl;
+        std::cout << "|    Rating: " << getRating() << "\n\n";
     }
 }
 
-// ***** SETTERS & GETTERS *****
+// Accessors & Mutators
 std::string CityCategory::getName()
 {
     return name;
