@@ -8,16 +8,16 @@
 #include "CityCategory.h"
 
 class Restaurant : public CityCategory {
-
+    
 private:
     std::vector<Restaurant *> restaurants;
-
+    
 public:
     Restaurant();
     ~Restaurant() override;
     Restaurant(std::string name, std::string description, bool favorite, int rating);
     void createPlace(
-            std::string name, std::string description, bool favorite, int rating) override;
+                     std::string name, std::string description, bool favorite, int rating) override;
     void listing() override;
 };
 

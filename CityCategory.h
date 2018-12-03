@@ -24,33 +24,33 @@
  */
 
 class CityCategory {
-
+    
 protected:
     std::string name;
     std::string description;
     bool favorite = false;
     int rating = 0;
-
-    // Store list of categories (needs to be implemented)
-    std::vector<CityCategory *> CityCategories;
-
+    
+    
 public:
     CityCategory();
     virtual ~CityCategory();
-
+    
     // Add New Place
     virtual void createPlace(
-            std::string name, std::string description, bool favorite, int rating);
-
+                             std::string name, std::string description, bool favorite, int rating);
+    
     // Print Composites
     virtual void getListing();
-
+    
+    virtual void listing() = 0;
+    
     // Accessors
     std::string getName();
     std::string getDescription();
     bool getFavorite();
     int getRating();
-
+    
     // Mutators
     void setName(std::string name);
     void setDescription(std::string blurb);
