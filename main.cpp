@@ -9,7 +9,7 @@
 
 int main() {
     auto * menu = new MainMenu();
-    menu->viewAll();
+    menu->view();
 
     delete menu;
     return 0;

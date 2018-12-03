@@ -14,6 +14,6 @@ MainMenu::~MainMenu() {
     delete userFacade;
 }
 
-void MainMenu::viewAll() {
-    userFacade->viewAll();
+void MainMenu::view() {
+    userFacade->view();
 }

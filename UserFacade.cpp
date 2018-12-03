@@ -46,12 +46,57 @@ void UserFacade::addPlace(int choice)
     CityCategories.push_back(category);
 }
 
-void UserFacade::viewAll()
+void UserFacade::view()
 {
-    while (CityCategoriesIterator.hasNext()) {
-        CityCategoriesIterator.next()->listing();
+    int sel, sel2;
+    std::cout << "Enter choice:\n1. View all\n2. View category\n3. View favorites\n4. View saved\n";
+    std::cin >> sel;
+    if(sel == 1)
+    {
+        while (CityCategoriesIterator.hasNext())
+        {
+            CityCategoriesIterator.next()->listing();
+        }
+        CityCategoriesIterator.resetPosition();
     }
-    CityCategoriesIterator.resetPosition();
+    else if(sel == 2)
+    {
+        std::cout << "Enter choice:\n1. View Restaurants\n2. View attractions\n";
+        std::cin >> sel2;
+        int i;
+        /*while(CityCategoriesIterator.hasNext()) //hard coded
+        {
+            for(i = 0; i < 3; i++)
+            {
+            if (sel2 == 1)
+            {
+                CityCategoriesIterator.next()->listing();
+                i++;
+            }
+            else if (sel2 == 2)
+            {
+                CityCategoriesIterator.next()->listing();
+                i++;
+            }
+        }*/
+        if(sel2 == 1)
+        {
+            CityCategories.at(0)->listing();
+
+        }
+        else if(sel2 == 2)
+        {
+            CityCategories.at(1)->listing();
+        }
+    }
+    else if(sel == 3)
+    {
+        //print favs
+    }
+    else if(sel == 4)
+    {
+        //view saved
+    }
 }
 
 void UserFacade::viewCategory()

@@ -29,7 +29,7 @@ public:
     MainMenu();
     ~MainMenu();
 
-    void viewAll();
+    void view();
 };
 
 #endif //CITYOFSJ_USER_H

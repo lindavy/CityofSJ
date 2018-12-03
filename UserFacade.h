@@ -7,6 +7,9 @@
 
 #include "CityCategoryFactory.h"
 #include "CityCategoryIterator.h"
+#include "Restaurants.h"
+#include "Attractions.h"
+
 
 class UserFacade {
 private:
@@ -15,6 +18,9 @@ private:
     CityCategoryFactory cityCategoryFactory;
     std::vector<CityCategory *> CityCategories; // not preferred method
     CityCategoryIterator CityCategoriesIterator;
+    Restaurant R_iterator;
+    Attraction A_iterator;
+
 
     bool fav;
     int rating;
@@ -25,8 +31,13 @@ public:
 
     std::vector<CityCategory *> * getCityCategories() { return &CityCategories; }
 
-    void viewAll();
     void viewCategory();
+    void view();
+    void add();
+    //void delete();
+    void edit();
+    void save();
+
 };
 
 #endif //CITYOFSJ_USERFACADE_H
