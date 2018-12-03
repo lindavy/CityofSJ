@@ -6,18 +6,27 @@
 #define CITYOFSJ_USERFACADE_H
 
 #include "CityCategoryFactory.h"
+#include "CityCategoryIterator.h"
 
 class UserFacade {
 private:
     std::string name, description;
     CityCategory * category;
     CityCategoryFactory cityCategoryFactory;
+    std::vector<CityCategory *> CityCategories; // not preferred method
+    CityCategoryIterator CityCategoriesIterator;
 
     bool fav;
     int rating;
 public:
-    void initialize(std::vector<CityCategory *> * CityCategories);
-    CityCategory * addPlace(int choice);
+    UserFacade();
+    void initialize();
+    void addPlace(int choice);
+
+    std::vector<CityCategory *> * getCityCategories() { return &CityCategories; }
+
+    void viewAll();
+    void viewCategory();
 };
 
 #endif //CITYOFSJ_USERFACADE_H

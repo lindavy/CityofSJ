@@ -19,7 +19,7 @@
  * Information:
  * Name of Place
  * Description of Place
- * User Marked as Favorite or Not
+ * MainMenu Marked as Favorite or Not
  * Rating on Scale of 1-5 (5 - Great)
  */
 
