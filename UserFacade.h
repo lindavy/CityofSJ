@@ -5,16 +5,19 @@
 #ifndef CITYOFSJ_USERFACADE_H
 #define CITYOFSJ_USERFACADE_H
 
-#include "Restaurants.h"
-#include "Attractions.h"
+#include "CityCategoryFactory.h"
 
 class UserFacade {
 private:
     std::string name, description;
-    int fav, rating;
+    CityCategory * category;
+    CityCategoryFactory cityCategoryFactory;
+
+    bool fav;
+    int rating;
 public:
-    void initialize();
-    void addPlace(int choice);
+    void initialize(std::vector<CityCategory *> * CityCategories);
+    CityCategory * addPlace(int choice);
 };
 
 #endif //CITYOFSJ_USERFACADE_H

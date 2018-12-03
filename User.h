@@ -11,6 +11,7 @@
 #include "Attractions.h"
 #include "Restaurants.h"
 #include "CityCategoryIterator.h"
+#include "UserFacade.h"
 
 typedef enum
 {
@@ -19,18 +20,13 @@ typedef enum
     attraction = 3,
     school = 4,
     services = 5
-}category;
-
+} category;
 
 class User {
 
 private:
-    // Store list of categories (needs to be implemented)
-    Restaurant *restaurants = new Restaurant();
-    Attraction *attractions = new Attraction();
-
+    UserFacade userFacade;
     std::vector<CityCategory *> CityCategories; // not preferred method
-
     CityCategoryIterator CityCategoriesIterator;
 
     /*
@@ -44,11 +40,10 @@ private:
 public:
     User();
 
-    void initialize();
+//    void initialize();
     void viewAll();
     void viewCategory();
     //void addPlace(category cc); // User Input
 };
 
 #endif //CITYOFSJ_USER_H
-

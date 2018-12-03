@@ -21,4 +21,5 @@ public:
             std::string name, std::string description, bool favorite, int rating) override;
     void listing() override; // Print
 };
+
 #endif //CITYOFSJ_ATTRACTIONS_H

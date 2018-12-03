@@ -18,11 +18,9 @@ int main() {
     std::cout << "Thank you for trying out the City of SJ's itinerary! Use the application to bookmark your favorite places and services!\n\n";
 
     auto *user1 = new User();
-    auto *fake = new UserFacade();
-    fake->addPlace(1);
-//    user1->initialize();
-//    user1->viewAll();
+    user1->viewAll();
     //user1->viewCategory();
 
+    delete user1;
     return 0;
 }

@@ -9,23 +9,7 @@
 // 3. choose to continue to go back
 
 User::User() : CityCategoriesIterator(&CityCategories) {
-}
-
-void User::initialize()
-{
-    restaurants->createPlace("T4", "too many options", false, 3);
-    restaurants->createPlace("Fantasia", "good boba", true, 3);
-    restaurants->createPlace("Ten Ren", "the only one for me", true, 5);
-    CityCategories.push_back(restaurants);
-    std::cout << "Restaurants are all entered.\n";
-
-    attractions->createPlace("Great America", "Theme Park", true, 3);
-    attractions->createPlace("Golfland", "Mini Golf", false, 2);
-    attractions->createPlace("Japanese Friendship Garden", "Park", true, 5);
-    CityCategories.push_back(attractions);
-    //std::cout << "Att Address: " << &attractions;
-    std::cout << "Attractions are all entered.\n";
-
+    userFacade.initialize(&CityCategories);
 }
 
 void User::viewAll()

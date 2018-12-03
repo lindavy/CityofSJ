@@ -3,24 +3,25 @@
 //
 #include "UserFacade.h"
 
-//void UserFacade::initialize()
-//{
-//    Restaurant restaurant;
-//    restaurants->createPlace("T4", "too many options", false, 3);
-//    restaurants->createPlace("Fantasia", "good boba", true, 3);
-//    restaurants->createPlace("Ten Ren", "the only one for me", true, 5);
-//    CityCategories.push_back(restaurants);
-//    std::cout << "Restaurants are all entered.\n";
-//
-//    attractions->createPlace("Great America", "Theme Park", true, 3);
-//    attractions->createPlace("Golfland", "Mini Golf", false, 2);
-//    attractions->createPlace("Japanese Friendship Garden", "Park", true, 5);
-//    CityCategories.push_back(attractions);
-//    //std::cout << "Att Address: " << &attractions;
-//    std::cout << "Attractions are all entered.\n";
-//}
+void UserFacade::initialize(std::vector<CityCategory *> * CityCategories)
+{
+    category = cityCategoryFactory.create(CityCategoryFactory::RESTAURANT);
+    category->createPlace("T4", "too many options", false, 3);
+    category->createPlace("Fantasia", "good boba", true, 3);
+    category->createPlace("Ten Ren", "the only one for me", true, 5);
+    CityCategories->push_back(category);
+    std::cout << "Restaurants are all entered.\n";
 
-void UserFacade::addPlace(int choice)
+    category = cityCategoryFactory.create(CityCategoryFactory::ATTRACTION);
+    category->createPlace("Great America", "Theme Park", true, 3);
+    category->createPlace("Golfland", "Mini Golf", false, 2);
+    category->createPlace("Japanese Friendship Garden", "Park", true, 5);
+    CityCategories->push_back(category);
+    //std::cout << "Att Address: " << &attractions;
+    std::cout << "Attractions are all entered.\n";
+}
+
+CityCategory * UserFacade::addPlace(int choice)
 {
     std::cout << "Name: "; std::cin >> name;
     std::cout << "Description: "; std::cin >> description;
@@ -29,11 +30,13 @@ void UserFacade::addPlace(int choice)
 
     if(choice == 1)
     {
-        Restaurant(name, description, fav, rating);
+        category = cityCategoryFactory.create(CityCategoryFactory::RESTAURANT);
     }
     else if(choice == 2)
     {
-        Attraction(name, description, fav, rating);
+        category = cityCategoryFactory.create(CityCategoryFactory::ATTRACTION);
     }
 
+    category->createPlace(name, description, fav, rating);
+    return category;
 }
