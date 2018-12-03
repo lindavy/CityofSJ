@@ -18,7 +18,7 @@ public:
     Restaurant(std::string name, std::string description, bool favorite, int rating);
     void createPlace(
             std::string name, std::string description, bool favorite, int rating) override;
-    void listing();
+    void listing() override;
 };
 
 
