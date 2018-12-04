@@ -13,18 +13,19 @@
 #include "CityCategoryIterator.h"
 #include "UserFacade.h"
 
-typedef enum
-{
-    restaurant = 1,
-    transit = 2,
-    attraction = 3,
-    school = 4,
-    services = 5
-} category;
+//typedef enum
+//{
+//    restaurant = 1,
+//    transit = 2,
+//    attraction = 3,
+//    school = 4,
+//    services = 5
+//} category;
 
 class MainMenu {
 private:
     UserFacade * userFacade;
+
 public:
     MainMenu();
     ~MainMenu();

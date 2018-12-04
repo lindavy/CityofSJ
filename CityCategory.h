@@ -30,25 +30,24 @@ protected:
     std::string description;
     bool favorite = false;
     int rating = 0;
-    
-    
+
 public:
     CityCategory();
     virtual ~CityCategory();
     
     // Add New Place
     virtual void createPlace(
-                             std::string name, std::string description, bool favorite, int rating);
+            std::string name, std::string description, bool favorite, int rating);
     
     // Print Composites
     virtual void getListing();
-    
     virtual void listing() = 0;
     
     // Accessors
     std::string getName();
     std::string getDescription();
-    bool getFavorite();
+    virtual bool getFavorite();
+    virtual void listFavorites();
     int getRating();
     
     // Mutators

@@ -15,15 +15,14 @@ void UserFacade::initialize()
     category->createPlace("Fantasia", "good boba", true, 3);
     category->createPlace("Ten Ren", "the only one for me", true, 5);
     CityCategories.push_back(category);
-    std::cout << "Restaurants are all entered.\n";
+    //std::cout << "Restaurants are all entered.\n";
 
     category = cityCategoryFactory.create(CityCategoryFactory::ATTRACTION);
     category->createPlace("Great America", "Theme Park", true, 3);
     category->createPlace("Golfland", "Mini Golf", false, 2);
     category->createPlace("Japanese Friendship Garden", "Park", true, 5);
     CityCategories.push_back(category);
-    //std::cout << "Att Address: " << &attractions;
-    std::cout << "Attractions are all entered.\n";
+    //std::cout << "Attractions are all entered.\n";
 }
 
 void UserFacade::addPlace(int choice)
@@ -49,7 +48,8 @@ void UserFacade::addPlace(int choice)
 void UserFacade::view()
 {
     int sel, sel2;
-    std::cout << "Enter choice:\n1. View all\n2. View category\n3. View favorites\n4. View saved\n";
+    std::cout << "\tVIEWING Options\n-----------------------\n"
+                 "1. View All\n2. View Category\n3. View Favorites\n4. View Saved\n\nSelection: ";
     std::cin >> sel;
     if(sel == 1)
     {
@@ -64,21 +64,7 @@ void UserFacade::view()
         std::cout << "Enter choice:\n1. View Restaurants\n2. View attractions\n";
         std::cin >> sel2;
         int i;
-        /*while(CityCategoriesIterator.hasNext()) //hard coded
-        {
-            for(i = 0; i < 3; i++)
-            {
-            if (sel2 == 1)
-            {
-                CityCategoriesIterator.next()->listing();
-                i++;
-            }
-            else if (sel2 == 2)
-            {
-                CityCategoriesIterator.next()->listing();
-                i++;
-            }
-        }*/
+
         if(sel2 == 1)
         {
             CityCategories.at(0)->listing();
@@ -91,7 +77,7 @@ void UserFacade::view()
     }
     else if(sel == 3)
     {
-        //print favs
+        CityCategories.at(1)->listFavorites();
     }
     else if(sel == 4)
     {
@@ -108,7 +94,6 @@ void UserFacade::viewCategory()
 
     if (choice == 1)
     {
-        //restaurants->listing();
         CityCategories.at(0)->listing();
     }
     else if (choice == 2)

@@ -43,6 +43,11 @@ void CityCategory::getListing()
     }
 }
 
+void CityCategory::listFavorites()
+{
+
+}
+
 // Accessors & Mutators
 std::string CityCategory::getName()
 {

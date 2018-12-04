@@ -20,6 +20,8 @@ public:
     void createPlace(
             std::string name, std::string description, bool favorite, int rating) override;
     void listing() override; // Print
+    bool getFavorite() override;
+    void listFavorites() override;
 };
 
 #endif //CITYOFSJ_ATTRACTIONS_H

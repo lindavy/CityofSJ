@@ -31,7 +31,8 @@ void Restaurant::createPlace(std::string name, std::string description, bool fav
 
 void Restaurant::listing()
 {
-    std::vector<Restaurant *>::iterator tempIt = restaurants.begin();
+    std::cout << "\n\t\tRESTAURANTS\n---------------------------\n";
+    auto tempIt = restaurants.begin();
     for(auto i = tempIt; tempIt != restaurants.end(); tempIt++)
     {
         (*tempIt)->getListing();

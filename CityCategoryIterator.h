@@ -11,7 +11,6 @@
 class CityCategoryIterator : public Iterator<CityCategory *> {
 
 private:
-    //std::vector<CityCategory *> CityCategories; // not preferred method
     std::vector<CityCategory *> *CityCategories;
     unsigned int position;
 public:

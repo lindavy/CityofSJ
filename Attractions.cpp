@@ -34,10 +34,25 @@ void Attraction::createPlace(std::string name, std::string description, bool fav
 void Attraction::listing()
 {
     //std::vector<Attraction *>::iterator tempIt = attractions.begin(); <-- use auto for readability
+    std::cout << "\n\t\tATTRACTIONS\n---------------------------\n";
     auto tempIt = attractions.begin();
     for(auto i = tempIt; tempIt != attractions.end(); tempIt++)
     {
-        // Dereference again to access getListing method
         (*tempIt)->getListing();
+    }
+}
+
+bool Attraction::getFavorite()
+{
+    return this->favorite;
+}
+
+void Attraction::listFavorites()
+{
+    auto tempIt = attractions.begin();
+    for(auto i = tempIt; tempIt != attractions.end(); tempIt++)
+    {
+        if((*tempIt)->getFavorite())
+            (*tempIt)->getListing();
     }
 }

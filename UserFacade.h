@@ -16,14 +16,11 @@ private:
     std::string name, description;
     CityCategory * category;
     CityCategoryFactory cityCategoryFactory;
-    std::vector<CityCategory *> CityCategories; // not preferred method
+    std::vector<CityCategory *> CityCategories;
     CityCategoryIterator CityCategoriesIterator;
-    Restaurant R_iterator;
-    Attraction A_iterator;
-
-
     bool fav;
     int rating;
+
 public:
     UserFacade();
     void initialize();

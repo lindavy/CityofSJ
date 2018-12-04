@@ -5,7 +5,8 @@
 
 #include "MainMenu.h"
 
-MainMenu::MainMenu() {
+MainMenu::MainMenu()
+{
     userFacade = new UserFacade();
     userFacade->initialize();
 }
