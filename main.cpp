@@ -15,32 +15,20 @@ int main() {
     while(active)
     {
         std::cout << "\tMENU Options\n-----------------------\n"
-                     "1. View \n2. Add\n3. Edit\n4. Delete\n\nSelection: ";
+                     "1. View \n2. Add\n3. Edit\n4. Quit App\n\nSelection: ";
         std::cin >> choice;
         std::cout << "\n\n";
 
         if(choice == 1)
             menu->view();
         else if(choice == 2)
-            std::cout << "doing things\n";
+            menu->add();
+        else if(choice == 3)
+            std::cout << "do some editing...\n";
         else
             active = false;
-
-//        switch(choice)
-//        {
-//            case 1:
-//            {
-//                menu->view();
-//            }
-//            case 2:
-//            {
-//                std::cout << "doing things\n";
-//            }
-//            case 3:
-//                active = false;
-//        }
     }
-
+    std::cout << "User has quit the application!!\n";
 
     delete menu;
     return 0;

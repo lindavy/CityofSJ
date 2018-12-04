@@ -27,8 +27,11 @@ void UserFacade::initialize()
 
 void UserFacade::addPlace(int choice)
 {
-    std::cout << "Name: "; std::cin >> name;
-    std::cout << "Description: "; std::cin >> description;
+    std::getline(std::cin, trash);
+    std::cout << "Name: ";
+    std::getline(std::cin, name);
+    std::cout << "Description: ";
+    std::getline(std::cin, description);
     std::cout << "Favorite(1/0): "; std::cin >> fav;
     std::cout << "Rating: "; std::cin >> rating;
 
@@ -40,7 +43,6 @@ void UserFacade::addPlace(int choice)
     {
         category = cityCategoryFactory.create(CityCategoryFactory::ATTRACTION);
     }
-
     category->createPlace(name, description, fav, rating);
     CityCategories.push_back(category);
 }
@@ -49,7 +51,7 @@ void UserFacade::view()
 {
     int sel, sel2;
     std::cout << "\tVIEWING Options\n-----------------------\n"
-                 "1. View All\n2. View Category\n3. View Favorites\n4. View Saved\n\nSelection: ";
+                 "1. View All\n2. View Category\n3. View Favorites\n4. Return\n\nSelection: ";
     std::cin >> sel;
     if(sel == 1)
     {
@@ -81,7 +83,7 @@ void UserFacade::view()
     }
     else if(sel == 4)
     {
-        //view saved
+        return;
     }
 }
 

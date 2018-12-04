@@ -13,13 +13,14 @@
 
 class UserFacade {
 private:
-    std::string name, description;
+    std::string name, description, trash;
+    bool fav; int rating;
+
     CityCategory * category;
     CityCategoryFactory cityCategoryFactory;
     std::vector<CityCategory *> CityCategories;
     CityCategoryIterator CityCategoriesIterator;
-    bool fav;
-    int rating;
+
 
 public:
     UserFacade();
