@@ -2,7 +2,6 @@
 // Created by Linda Nguyen on 12/1/18.
 //
 
-
 #include "MainMenu.h"
 
 MainMenu::MainMenu()
@@ -25,4 +24,9 @@ void MainMenu::add() {
     if(select == 3)
         return;
     userFacade->addPlace(select);
+}
+
+void MainMenu::edit()
+{
+    userFacade->edit();
 }

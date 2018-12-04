@@ -5,7 +5,6 @@
 
 Attraction::Attraction()
 {
-//    std::cout << "Constructing an Attraction!\n";
 }
 
 Attraction::Attraction(std::string name, std::string description, bool favorite, int rating) : CityCategory(name,

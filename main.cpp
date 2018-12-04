@@ -2,11 +2,6 @@
 #include <string>
 #include "MainMenu.h"
 
-/*
- * Still needs to support users' inputs!!
- * Needs to handle dangling pointers !!
- */
-
 int main() {
     auto * menu = new MainMenu();
     bool active = true;
@@ -24,7 +19,7 @@ int main() {
         else if(choice == 2)
             menu->add();
         else if(choice == 3)
-            std::cout << "do some editing...\n";
+            menu->edit();
         else
             active = false;
     }

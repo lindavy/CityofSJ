@@ -24,6 +24,7 @@ public:
 
     void view();
     void add();
+    void edit();
 };
 
 #endif //CITYOFSJ_USER_H

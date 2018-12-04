@@ -42,6 +42,26 @@ void UserFacade::listFavorites(std::vector<CityCategory *> * typeVec) {
     }
 }
 
+void UserFacade::changeName(std::vector<CityCategory *> * typeVec)
+{
+    CityCategoryIterator it(typeVec);
+    CityCategory * type;
+
+    std::string n,x;
+    std::getline(std::cin, trash);
+    std::cout << "Enter the name you want to change\n";
+    std::getline(std::cin, n);
+    std::cout << "Enter the name you want instead\n";
+    std::getline(std::cin, x);
+    while (it.hasNext())
+    {
+        type = it.next();
+        if (type->getName() == n)
+        {
+            type->setName(x);
+        }
+    }
+}
 
 void UserFacade::addPlace(int choice)
 {
@@ -113,6 +133,25 @@ void UserFacade::viewCategory()
     }
     else if (choice == 2)
     {
+        listCategories(CityCategories.at(1)->getCategoryList());
+    }
+}
+
+void UserFacade::edit()
+{
+    int cat;
+    std::cout << "Enter which category you want to change:\n1. Restaurants\n2. Attractions\n";
+    std::cin >> cat;
+    if(cat == 1)
+    {
+        changeName(CityCategories.at(0)->getCategoryList());
+        std::cout << "List of Restaurants with changed name:\n";
+        listCategories(CityCategories.at(0)->getCategoryList());
+    }
+    else if(cat == 2)
+    {
+        changeName(CityCategories.at(1)->getCategoryList());
+        std::cout << "List of Attractions with changed name:\n";
         listCategories(CityCategories.at(1)->getCategoryList());
     }
 }

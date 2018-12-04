@@ -16,5 +16,4 @@ public:
     void createPlace(std::string name, std::string description, bool favorite, int rating) override;
 };
 
-
 #endif //CITYOFSJ_RESTAURANTS_H
