@@ -3,20 +3,12 @@
 ////
 #include "CityCategory.h"
 
-// Default
-CityCategory::CityCategory()
-{
-    this->name = "CmpE 135 Course\n";
-    this->description = "Object-Oriented Design\n";
-    this->favorite = true;
-    this->rating = 5;
+CityCategory::CityCategory(std::string name, std::string description, bool favorite, int rating) {
+    this->name = name;
+    this->description = description;
+    this->favorite = favorite;
+    this->rating = rating;
 }
-
-// Destructor
-CityCategory::~CityCategory()
-{
-    std::cout << "Destructing a CityCategory...\n";
-};
 
 // Print Place Information
 void CityCategory::getListing()

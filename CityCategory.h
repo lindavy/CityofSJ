@@ -31,29 +31,32 @@ protected:
     bool favorite = false;
     int rating = 0;
 
+    std::vector<CityCategory *> categoryList;
+
 public:
-    CityCategory();
-    virtual ~CityCategory();
-    
+    CityCategory() = default;
+    CityCategory(std::string name, std::string description, bool favorite, int rating);
+    virtual ~CityCategory() = default;
+
     // Add New Place
     virtual void createPlace(std::string name, std::string description, bool favorite, int rating) = 0;
-    
+
     // Print Vector maps
     void getListing();
-    virtual void listing() = 0;
-    
+
     // Accessors
     std::string getName();
     std::string getDescription();
     bool getFavorite();
-    virtual void listFavorites() = 0;
     int getRating();
-    
+
     // Mutators
     void setName(std::string name);
     void setDescription(std::string blurb);
     void setFavorite(bool fav);
     void setRating(int rate);
+
+    std::vector<CityCategory *> * getCategoryList() { return &categoryList; }
 };
 
 #endif //CITYOFSJ_CITYCATEGORY_H
