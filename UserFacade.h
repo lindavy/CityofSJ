@@ -21,7 +21,6 @@ private:
     std::vector<CityCategory *> CityCategories;
     CityCategoryIterator CityCategoriesIterator;
 
-
 public:
     UserFacade();
     void initialize();
@@ -34,8 +33,10 @@ public:
     void add();
     //void delete();
     void edit();
-    void save();
 
+    void listCategories(std::vector<CityCategory *> * typeVec);
+    void listFavorites(std::vector<CityCategory *> * typeVec);
+    void changeName(std::vector<CityCategory *> * typeVec);
 };
 
 #endif //CITYOFSJ_USERFACADE_H
