@@ -18,14 +18,6 @@ CityCategory::~CityCategory()
     std::cout << "Destructing a CityCategory...\n";
 };
 
-void CityCategory::createPlace(std::string name, std::string description, bool favorite, int rating)
-{
-    this->name = name;
-    this->description = description;
-    this->favorite = favorite;
-    this->rating = rating;
-}
-
 // Print Place Information
 void CityCategory::getListing()
 {
@@ -41,11 +33,6 @@ void CityCategory::getListing()
         std::cout << "|    Description: " << getDescription() << std::endl;
         std::cout << "|    Rating: " << getRating() << "\n\n";
     }
-}
-
-void CityCategory::listFavorites()
-{
-
 }
 
 // Accessors & Mutators

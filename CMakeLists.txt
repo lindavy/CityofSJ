@@ -14,7 +14,6 @@ add_executable(CityofSJ
         CityCategoryFactory.h
         CityCategoryIterator.cpp
         CityCategoryIterator.h
-        Iterator.cpp
         Iterator.h
         main.cpp
         Restaurants.cpp

@@ -5,7 +5,7 @@
 
 Attraction::Attraction()
 {
-    //std::cout << "Constructing an Attraction!\n";
+//    std::cout << "Constructing an Attraction!\n";
 }
 
 
@@ -40,11 +40,6 @@ void Attraction::listing()
     {
         (*tempIt)->getListing();
     }
-}
-
-bool Attraction::getFavorite()
-{
-    return this->favorite;
 }
 
 void Attraction::listFavorites()

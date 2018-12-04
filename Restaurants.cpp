@@ -38,3 +38,12 @@ void Restaurant::listing()
         (*tempIt)->getListing();
     }
 }
+
+void Restaurant::listFavorites() {
+    auto tempIt = restaurants.begin();
+    for(auto i = tempIt; tempIt != restaurants.end(); tempIt++)
+    {
+        if((*tempIt)->getFavorite())
+            (*tempIt)->getListing();
+    }
+}

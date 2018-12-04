@@ -5,10 +5,6 @@
 #ifndef CITYOFSJ_ITERATOR_H
 #define CITYOFSJ_ITERATOR_H
 
-#include <iostream>
-#include <iterator>
-#include <string>
-
 template<class T>
 class Iterator {
 public:

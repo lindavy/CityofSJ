@@ -36,18 +36,17 @@ public:
     virtual ~CityCategory();
     
     // Add New Place
-    virtual void createPlace(
-            std::string name, std::string description, bool favorite, int rating);
+    virtual void createPlace(std::string name, std::string description, bool favorite, int rating) = 0;
     
-    // Print Composites
-    virtual void getListing();
+    // Print Vector maps
+    void getListing();
     virtual void listing() = 0;
     
     // Accessors
     std::string getName();
     std::string getDescription();
-    virtual bool getFavorite();
-    virtual void listFavorites();
+    bool getFavorite();
+    virtual void listFavorites() = 0;
     int getRating();
     
     // Mutators
