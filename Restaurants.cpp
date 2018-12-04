@@ -47,3 +47,28 @@ void Restaurant::listFavorites() {
             (*tempIt)->getListing();
     }
 }
+std::string Restaurant::getName()
+{
+    return this->name;
+}
+void Restaurant::setName(std::string name)
+{
+    this->name = name;
+}
+void Restaurant::changeName()
+{
+    std::string n,x;
+    std::cout << "Enter the name you want to change\n";
+    std::cin >> n;
+    std::cout << "Enter the name you want instead\n";
+    std::cin >> x;
+
+    auto tempIt = restaurants.begin();
+    for(auto i = tempIt; tempIt != restaurants.end(); tempIt++)
+    {
+        if((*tempIt)->getName() == n)
+        {
+            (*tempIt)->setName(x);
+        }
+    }
+}

@@ -19,6 +19,9 @@ public:
     void createPlace(std::string name, std::string description, bool favorite, int rating) override;
     void listing() override;
     void listFavorites() override;
+    std::string getName();
+    void changeName();
+    void setName(std::string name);
 };
 
 

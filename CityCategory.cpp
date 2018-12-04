@@ -36,10 +36,10 @@ void CityCategory::getListing()
 }
 
 // Accessors & Mutators
-std::string CityCategory::getName()
-{
-    return name;
-}
+//std::string CityCategory::getName()
+//{
+//    return name;
+//}
 
 std::string CityCategory::getDescription()
 {
@@ -54,10 +54,10 @@ int CityCategory::getRating()
 {
     return rating;
 }
-void CityCategory::setName(std::string name)
-{
-    this->name = name;
-}
+//void CityCategory::setName(std::string name)
+//{
+//    this->name = name;
+//}
 void CityCategory::setDescription(std::string blurb)
 {
     this->description = blurb;

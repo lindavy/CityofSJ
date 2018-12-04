@@ -24,7 +24,7 @@ int main() {
         else if(choice == 2)
             menu->add();
         else if(choice == 3)
-            std::cout << "do some editing...\n";
+            menu->edit();
         else
             active = false;
     }

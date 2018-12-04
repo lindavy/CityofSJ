@@ -43,14 +43,17 @@ public:
     virtual void listing() = 0;
     
     // Accessors
-    std::string getName();
+    virtual std::string getName() = 0;
     std::string getDescription();
     bool getFavorite();
     virtual void listFavorites() = 0;
     int getRating();
+
+    virtual void setName(std::string name) = 0;
+    virtual void changeName() = 0;
     
     // Mutators
-    void setName(std::string name);
+
     void setDescription(std::string blurb);
     void setFavorite(bool fav);
     void setRating(int rate);

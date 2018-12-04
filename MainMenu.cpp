@@ -26,3 +26,7 @@ void MainMenu::add() {
         return;
     userFacade->addPlace(select);
 }
+void MainMenu::edit()
+{
+    userFacade->edit();
+}

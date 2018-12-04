@@ -93,3 +93,22 @@ void UserFacade::viewCategory()
         CityCategories.at(1)->listing();
     }
 }
+void UserFacade::edit()
+{
+    int cat;
+    std::cout << "Enter which category you want to change:\n1. Restaurants\n2. Attractions\n";
+    std::cin >> cat;
+    if(cat == 1)
+    {
+        CityCategories.at(0)->changeName();
+        std::cout << "List of Restaurants with changed name:\n";
+        CityCategories.at(0)->listing();
+    }
+    else if(cat == 2)
+    {
+        CityCategories.at(1)->changeName();
+        std::cout << "List of Attractions with changed name:\n";
+        CityCategories.at(1)->listing();
+    }
+
+}

@@ -51,3 +51,28 @@ void Attraction::listFavorites()
             (*tempIt)->getListing();
     }
 }
+std::string Attraction::getName()
+{
+    return this->name;
+}
+void Attraction::setName(std::string name)
+{
+    this->name = name;
+}
+void Attraction::changeName()
+{
+    std::string n,x;
+    std::cout << "Enter the name you want to change\n";
+    std::cin >> n;
+    std::cout << "Enter the name you want instead\n";
+    std::cin >> x;
+
+    auto tempIt = attractions.begin();
+    for(auto i = tempIt; tempIt != attractions.end(); tempIt++)
+    {
+        if((*tempIt)->getName() == n)
+        {
+            (*tempIt)->setName(x);
+        }
+    }
+}
